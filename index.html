@@ -37,12 +37,12 @@
         <script src="data/Hutan_Adat_Kampa_KLHK_Split_5.js"></script>
         <script src="data/Pohon_Terusan_6.js"></script>
         <script src="data/Pohon_Petapahan_7.js"></script>
-        <script src="data/Pohon_Kampa_8.js"></script>
+        <script src="data/Pohon_Kampa_2_8.js"></script>
         <script src="data/Pohon_GajahBertalut_9.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[0.5044493244512527,101.01028102766689],[0.6008638944510913,101.16360780959688]]);
+        }).fitBounds([[0.5291232897500905,101.03837692975897],[0.5532269322500502,101.07670862524147]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -946,23 +946,8 @@
         });
         bounds_group.addLayer(layer_Pohon_Petapahan_7);
         map.addLayer(layer_Pohon_Petapahan_7);
-        function pop_Pohon_Kampa_8(feature, layer) {
+        function pop_Pohon_Kampa_2_8(feature, layer) {
             var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['X'] !== null ? autolinker.link(feature.properties['X'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Y'] !== null ? autolinker.link(feature.properties['Y'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2"><strong>Kode_Pohon</strong><br />' + (feature.properties['Kode_Pohon'] !== null ? autolinker.link(feature.properties['Kode_Pohon'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['X_1'] !== null ? autolinker.link(feature.properties['X_1'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Y_1'] !== null ? autolinker.link(feature.properties['Y_1'].toLocaleString()) : '') + '</td>\
-                    </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['start'] !== null ? autolinker.link(feature.properties['start'].toLocaleString()) : '') + '</td>\
                     </tr>\
@@ -970,22 +955,34 @@
                         <td colspan="2">' + (feature.properties['end'] !== null ? autolinker.link(feature.properties['end'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>Nama_Pohon</strong><br />' + (feature.properties['Nama_Pohon'] !== null ? autolinker.link(feature.properties['Nama_Pohon'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Kode_Pohon'] !== null ? autolinker.link(feature.properties['Kode_Pohon'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['altitude'] !== null ? autolinker.link(feature.properties['altitude'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Nama_Pohon'] !== null ? autolinker.link(feature.properties['Nama_Pohon'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Koordinat_'] !== null ? autolinker.link(feature.properties['Koordinat_'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Koordinat'] !== null ? autolinker.link(feature.properties['Koordinat'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Nama_Wilay'] !== null ? autolinker.link(feature.properties['Nama_Wilay'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['_Koordinat_latitude'] !== null ? autolinker.link(feature.properties['_Koordinat_latitude'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Diameter_c'] !== null ? autolinker.link(feature.properties['Diameter_c'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['_Koordinat_longitude'] !== null ? autolinker.link(feature.properties['_Koordinat_longitude'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Keliling_c'] !== null ? autolinker.link(feature.properties['Keliling_c'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['_Koordinat_altitude'] !== null ? autolinker.link(feature.properties['_Koordinat_altitude'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['_Koordinat_precision'] !== null ? autolinker.link(feature.properties['_Koordinat_precision'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Nama_Wilayah'] !== null ? autolinker.link(feature.properties['Nama_Wilayah'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Diameter_cm'] !== null ? autolinker.link(feature.properties['Diameter_cm'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Keliling_cm'] !== null ? autolinker.link(feature.properties['Keliling_cm'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['Tinggi_m'] !== null ? autolinker.link(feature.properties['Tinggi_m'].toLocaleString()) : '') + '</td>\
@@ -997,53 +994,73 @@
                         <td colspan="2">' + (feature.properties['Foto_2'] !== null ? autolinker.link(feature.properties['Foto_2'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Foto_Koord'] !== null ? autolinker.link(feature.properties['Foto_Koord'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Foto_Pohon_Full_mem_h_hingga_tajuk_pohon'] !== null ? autolinker.link(feature.properties['Foto_Pohon_Full_mem_h_hingga_tajuk_pohon'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Nama_Surve'] !== null ? autolinker.link(feature.properties['Nama_Surve'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Foto_Koordinat_di_Layar_GPS'] !== null ? autolinker.link(feature.properties['Foto_Koordinat_di_Layar_GPS'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Waktu_Surv'] !== null ? autolinker.link(feature.properties['Waktu_Surv'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Nama_Surveyor'] !== null ? autolinker.link(feature.properties['Nama_Surveyor'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Tanggal_Su'] !== null ? autolinker.link(feature.properties['Tanggal_Su'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Waktu_Survey'] !== null ? autolinker.link(feature.properties['Waktu_Survey'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Submission'] !== null ? autolinker.link(feature.properties['Submission'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Tanggal_Survey'] !== null ? autolinker.link(feature.properties['Tanggal_Survey'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Submitted_'] !== null ? autolinker.link(feature.properties['Submitted_'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['__version__'] !== null ? autolinker.link(feature.properties['__version__'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Foto'] !== null ? autolinker.link(feature.properties['Foto'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['meta/instanceID'] !== null ? autolinker.link(feature.properties['meta/instanceID'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Adopsi'] !== null ? autolinker.link(feature.properties['Adopsi'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['_id'] !== null ? autolinker.link(feature.properties['_id'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Stat_IUCN'] !== null ? autolinker.link(feature.properties['Stat_IUCN'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['_uuid'] !== null ? autolinker.link(feature.properties['_uuid'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Nama_Spes'] !== null ? autolinker.link(feature.properties['Nama_Spes'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['_submission_time'] !== null ? autolinker.link(feature.properties['_submission_time'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Ton_C'] !== null ? autolinker.link(feature.properties['Ton_C'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['_date_modified'] !== null ? autolinker.link(feature.properties['_date_modified'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Harga_Rp'] !== null ? autolinker.link(feature.properties['Harga_Rp'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['_tags'] !== null ? autolinker.link(feature.properties['_tags'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Tipe'] !== null ? autolinker.link(feature.properties['Tipe'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['_notes'] !== null ? autolinker.link(feature.properties['_notes'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['_version'] !== null ? autolinker.link(feature.properties['_version'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['_duration'] !== null ? autolinker.link(feature.properties['_duration'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['_submitted_by'] !== null ? autolinker.link(feature.properties['_submitted_by'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['_total_media'] !== null ? autolinker.link(feature.properties['_total_media'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['_media_count'] !== null ? autolinker.link(feature.properties['_media_count'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['_media_all_received'] !== null ? autolinker.link(feature.properties['_media_all_received'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['_xform_id'] !== null ? autolinker.link(feature.properties['_xform_id'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_Pohon_Kampa_8_0(feature) {
-            if (feature.properties['Diameter_c'] >= 0.000000 && feature.properties['Diameter_c'] <= 40.000000 ) {
-                return {
-                pane: 'pane_Pohon_Kampa_8',
-                radius: 2.0,
+        function style_Pohon_Kampa_2_8_0() {
+            return {
+                pane: 'pane_Pohon_Kampa_2_8',
+                radius: 4.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -1052,79 +1069,30 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,68,12,1.0)',
+                fillColor: 'rgba(225,89,137,1.0)',
                 interactive: true,
-            }
-            }
-            if (feature.properties['Diameter_c'] >= 40.000000 && feature.properties['Diameter_c'] <= 100.000000 ) {
-                return {
-                pane: 'pane_Pohon_Kampa_8',
-                radius: 4.66666,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(207,141,48,1.0)',
-                interactive: true,
-            }
-            }
-            if (feature.properties['Diameter_c'] >= 100.000000 && feature.properties['Diameter_c'] <= 200.000000 ) {
-                return {
-                pane: 'pane_Pohon_Kampa_8',
-                radius: 7.33334,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,249,66,1.0)',
-                interactive: true,
-            }
-            }
-            if (feature.properties['Diameter_c'] >= 200.000000 && feature.properties['Diameter_c'] <= 300.000000 ) {
-                return {
-                pane: 'pane_Pohon_Kampa_8',
-                radius: 10.0,
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(175,255,25,1.0)',
-                interactive: true,
-            }
             }
         }
-        map.createPane('pane_Pohon_Kampa_8');
-        map.getPane('pane_Pohon_Kampa_8').style.zIndex = 408;
-        map.getPane('pane_Pohon_Kampa_8').style['mix-blend-mode'] = 'normal';
-        var layer_Pohon_Kampa_8 = new L.geoJson(json_Pohon_Kampa_8, {
+        map.createPane('pane_Pohon_Kampa_2_8');
+        map.getPane('pane_Pohon_Kampa_2_8').style.zIndex = 408;
+        map.getPane('pane_Pohon_Kampa_2_8').style['mix-blend-mode'] = 'normal';
+        var layer_Pohon_Kampa_2_8 = new L.geoJson(json_Pohon_Kampa_2_8, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Pohon_Kampa_8',
-            layerName: 'layer_Pohon_Kampa_8',
-            pane: 'pane_Pohon_Kampa_8',
-            onEachFeature: pop_Pohon_Kampa_8,
+            dataVar: 'json_Pohon_Kampa_2_8',
+            layerName: 'layer_Pohon_Kampa_2_8',
+            pane: 'pane_Pohon_Kampa_2_8',
+            onEachFeature: pop_Pohon_Kampa_2_8,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_Pohon_Kampa_8_0(feature));
+                return L.circleMarker(latlng, style_Pohon_Kampa_2_8_0(feature));
             },
         });
-        bounds_group.addLayer(layer_Pohon_Kampa_8);
-        map.addLayer(layer_Pohon_Kampa_8);
+        bounds_group.addLayer(layer_Pohon_Kampa_2_8);
+        map.addLayer(layer_Pohon_Kampa_2_8);
         function pop_Pohon_GajahBertalut_9(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -1266,7 +1234,7 @@
         bounds_group.addLayer(layer_Pohon_GajahBertalut_9);
         map.addLayer(layer_Pohon_GajahBertalut_9);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'Pohon_GajahBertalut<br /><table><tr><td style="text-align: center;"><img src="legend/Pohon_GajahBertalut_9_0400.png" /></td><td>0 - 40</td></tr><tr><td style="text-align: center;"><img src="legend/Pohon_GajahBertalut_9_401001.png" /></td><td>40 - 100</td></tr><tr><td style="text-align: center;"><img src="legend/Pohon_GajahBertalut_9_1002002.png" /></td><td>100 - 200</td></tr><tr><td style="text-align: center;"><img src="legend/Pohon_GajahBertalut_9_2003003.png" /></td><td>200 - 300</td></tr></table>': layer_Pohon_GajahBertalut_9,'Pohon_Kampa<br /><table><tr><td style="text-align: center;"><img src="legend/Pohon_Kampa_8_0400.png" /></td><td>0 - 40</td></tr><tr><td style="text-align: center;"><img src="legend/Pohon_Kampa_8_401001.png" /></td><td>40 - 100</td></tr><tr><td style="text-align: center;"><img src="legend/Pohon_Kampa_8_1002002.png" /></td><td>100 - 200</td></tr><tr><td style="text-align: center;"><img src="legend/Pohon_Kampa_8_2003003.png" /></td><td>200 - 300</td></tr></table>': layer_Pohon_Kampa_8,'Pohon_Petapahan<br /><table><tr><td style="text-align: center;"><img src="legend/Pohon_Petapahan_7_0400.png" /></td><td>0 - 40</td></tr><tr><td style="text-align: center;"><img src="legend/Pohon_Petapahan_7_401001.png" /></td><td>40 - 100</td></tr><tr><td style="text-align: center;"><img src="legend/Pohon_Petapahan_7_1002002.png" /></td><td>100 - 200</td></tr><tr><td style="text-align: center;"><img src="legend/Pohon_Petapahan_7_2003003.png" /></td><td>200 - 300</td></tr></table>': layer_Pohon_Petapahan_7,'Pohon_Terusan<br /><table><tr><td style="text-align: center;"><img src="legend/Pohon_Terusan_6_0400.png" /></td><td>0 - 40</td></tr><tr><td style="text-align: center;"><img src="legend/Pohon_Terusan_6_401001.png" /></td><td>40 - 100</td></tr><tr><td style="text-align: center;"><img src="legend/Pohon_Terusan_6_1002002.png" /></td><td>100 - 200</td></tr><tr><td style="text-align: center;"><img src="legend/Pohon_Terusan_6_2003003.png" /></td><td>200 - 300</td></tr></table>': layer_Pohon_Terusan_6,'<img src="legend/Hutan_Adat_Kampa_KLHK_Split_5.png" /> Hutan_Adat_Kampa_KLHK_Split': layer_Hutan_Adat_Kampa_KLHK_Split_5,'<img src="legend/Hutan_Adat_Petapahan_KLHK_4.png" /> Hutan_Adat_Petapahan_KLHK': layer_Hutan_Adat_Petapahan_KLHK_4,'<img src="legend/Hutan_Adat_Terusan_3.png" /> Hutan_Adat_Terusan': layer_Hutan_Adat_Terusan_3,'<img src="legend/Hutan_Adat_GajahBertalut_2.png" /> Hutan_Adat_GajahBertalut': layer_Hutan_Adat_GajahBertalut_2,'<img src="legend/Usulan_Hutan_Desa_Tandun_1.png" /> Usulan_Hutan_Desa_Tandun': layer_Usulan_Hutan_Desa_Tandun_1,"Google_Satelite": layer_Google_Satelite_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'Pohon_GajahBertalut<br /><table><tr><td style="text-align: center;"><img src="legend/Pohon_GajahBertalut_9_0400.png" /></td><td>0 - 40</td></tr><tr><td style="text-align: center;"><img src="legend/Pohon_GajahBertalut_9_401001.png" /></td><td>40 - 100</td></tr><tr><td style="text-align: center;"><img src="legend/Pohon_GajahBertalut_9_1002002.png" /></td><td>100 - 200</td></tr><tr><td style="text-align: center;"><img src="legend/Pohon_GajahBertalut_9_2003003.png" /></td><td>200 - 300</td></tr></table>': layer_Pohon_GajahBertalut_9,'<img src="legend/Pohon_Kampa_2_8.png" /> Pohon_Kampa_2': layer_Pohon_Kampa_2_8,'Pohon_Petapahan<br /><table><tr><td style="text-align: center;"><img src="legend/Pohon_Petapahan_7_0400.png" /></td><td>0 - 40</td></tr><tr><td style="text-align: center;"><img src="legend/Pohon_Petapahan_7_401001.png" /></td><td>40 - 100</td></tr><tr><td style="text-align: center;"><img src="legend/Pohon_Petapahan_7_1002002.png" /></td><td>100 - 200</td></tr><tr><td style="text-align: center;"><img src="legend/Pohon_Petapahan_7_2003003.png" /></td><td>200 - 300</td></tr></table>': layer_Pohon_Petapahan_7,'Pohon_Terusan<br /><table><tr><td style="text-align: center;"><img src="legend/Pohon_Terusan_6_0400.png" /></td><td>0 - 40</td></tr><tr><td style="text-align: center;"><img src="legend/Pohon_Terusan_6_401001.png" /></td><td>40 - 100</td></tr><tr><td style="text-align: center;"><img src="legend/Pohon_Terusan_6_1002002.png" /></td><td>100 - 200</td></tr><tr><td style="text-align: center;"><img src="legend/Pohon_Terusan_6_2003003.png" /></td><td>200 - 300</td></tr></table>': layer_Pohon_Terusan_6,'<img src="legend/Hutan_Adat_Kampa_KLHK_Split_5.png" /> Hutan_Adat_Kampa_KLHK_Split': layer_Hutan_Adat_Kampa_KLHK_Split_5,'<img src="legend/Hutan_Adat_Petapahan_KLHK_4.png" /> Hutan_Adat_Petapahan_KLHK': layer_Hutan_Adat_Petapahan_KLHK_4,'<img src="legend/Hutan_Adat_Terusan_3.png" /> Hutan_Adat_Terusan': layer_Hutan_Adat_Terusan_3,'<img src="legend/Hutan_Adat_GajahBertalut_2.png" /> Hutan_Adat_GajahBertalut': layer_Hutan_Adat_GajahBertalut_2,'<img src="legend/Usulan_Hutan_Desa_Tandun_1.png" /> Usulan_Hutan_Desa_Tandun': layer_Usulan_Hutan_Desa_Tandun_1,"Google_Satelite": layer_Google_Satelite_0,},{collapsed:false}).addTo(map);
         setBounds();
         map.addControl(new L.Control.Search({
             layer: layer_Pohon_GajahBertalut_9,
